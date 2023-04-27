@@ -1,0 +1,49 @@
+<div class="wrapper">
+    <main class="container main__block">
+        <div class="main__block-add-task add__task">
+            <button class="btn btn-plus" (click)="plusBtn()">+</button>
+            <p class="add__task-box">Add task </p>
+        </div>
+        <ng-container *ngIf="isAddingTask">
+            <form class="form" [formGroup]="newTask" (ngSubmit)="addTask()">
+                <div class="input-box">
+                    <label class="label" for="name">Task name:</label>
+                    <input id="name" type="text" formControlName="name">
+                </div>
+                <div class="input-box">
+
+                    <label class="label" for="description">Task description:</label>
+                    <textarea id="description" type="text" formControlName="description"></textarea>
+                </div>
+                <div class="form-action">
+                    <button class="btn btn-add" type="submit" [disabled]="newTask.invalid">Add</button>
+                    <button class="btn btn-close-add" (click)="closeAddingTask()">close</button>
+                </div>
+            </form>
+        </ng-container>
+
+        <table class="table">
+            <thead class="table-head">
+                <th>№</th>
+                <th>Task name</th>
+                <th>Task description</th>
+                <th>Task status</th>
+            </thead>
+            <tbody class="table-body">
+                <tr [style.backgroundColor]="taskService.getStatusColor(item.status).backgroundColor"
+                    [style.color]="taskService.getStatusColor(item.status).color"
+                    *ngFor="let item of allTasks index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td class="descip-td">{{item.description}}</td>
+                    <td>{{item.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-container *ngIf="checkEmpty()">
+            <div class="no-tasks">
+                There are no tasks yet!
+            </div>
+        </ng-container>
+    </main>
+</div>

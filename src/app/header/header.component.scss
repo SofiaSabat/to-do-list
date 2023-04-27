@@ -1,0 +1,39 @@
+@import url(../shared/_base.scss);
+
+.link-active{
+   padding: 5px;
+   border: 2px solid green;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #948989;
+    display: flex;
+    align-items: center;
+}
+.header__nav {
+    width: 100%;
+}
+.header-ul {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+}
+.header-ul li {
+    width: 100%;
+    display: flex;
+    text-transform: capitalize;
+    font-size: 22px;
+    justify-content: center;
+
+}
+.content{
+    display: block;
+    margin-top: 150px;
+    border: 1px solid;
+}

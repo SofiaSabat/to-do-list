@@ -1,0 +1,167 @@
+.wrapper {
+    padding: 0px 20px;
+    font-family: "Rock Salt";
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Rock Salt"
+}
+
+.main__block {}
+
+.main__block-add-task {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column-reverse;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.add__task {
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+}
+
+input,
+textarea {
+    background: #fff;
+    padding: 10px;
+    border-radius: 11px;
+    width: 400px;
+    min-height: 30px;
+    padding: 5px;
+}
+
+.label {
+    position: absolute;
+    left: 10px;
+    background: #fff;
+    padding: 0 5px;
+    top: -7px;
+}
+
+.form-action {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.btn:not([disabled]):hover {
+    cursor: pointer;
+    border: 2px solid grey;
+}
+
+.btn:not([disabled]):active {
+    box-shadow: 2px 2px 5px #beb2ab;
+}
+
+.btn-plus {
+    height: 50%;
+    width: 150px;
+    padding: 5px;
+    align-self: center;
+}
+
+.btn-edit,
+.bnt-delete {
+    width: 70px;
+}
+
+textarea {
+    resize: none;
+    min-height: 50px;
+    padding-top: 15px;
+}
+
+.add__task-box {}
+
+.btn-add {}
+
+table {
+    width: 100%;
+    border-spacing: 2px 5px;
+}
+
+.table-head thead {}
+
+thead {}
+
+.table-body {
+    border: 1px solid;
+}
+
+tr {
+    background-color: #d4cece;
+    height: 55px;
+}
+
+thead th,
+tbody td {
+    font-family: "Rock Salt", cursive;
+
+}
+
+th {
+    letter-spacing: 2px;
+    background-color: #948989;
+    padding: 5px;
+    height: 30px;
+}
+
+td {
+    letter-spacing: 1px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+tbody td {
+    text-align: center;
+}
+
+.no-tasks {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.descip-td {
+    width: 40%;
+}
+
+.btn-close {
+    padding: 0px;
+    height: 50%;
+    border: none;
+}
+
+.btn-close:hover {
+    cursor: pointer;
+}
+
+.btn-close:active {
+    transform: scale(1.1);
+}

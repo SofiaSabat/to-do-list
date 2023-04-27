@@ -1,0 +1,70 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>  
+<div class="wrapper">
+    <main class="container main__block">          
+          <table class="table">
+              <thead class="table-head">
+                  <th>№</th>
+                  <th>Task name</th>
+                  <th>Task description</th>
+                  <th>Task status</th>
+                  <th>Edit</th>
+
+              </thead>
+              <tbody class="table-body">
+                  <tr [style.backgroundColor]="taskService.getStatusColor(item.status).backgroundColor" 
+                  [style.color]="taskService.getStatusColor(item.status).color"
+                  *ngFor="let item of allTasks; index as i">
+                      <td>{{i+1}}</td>
+                      <td>{{item.name}}</td>
+                      <td class="descip-td">{{item.description}}</td>
+                      <td >{{item.status}}</td>
+                      <td><button class="btn btn-edit" (click)="editTask(item)">Edit</button></td>
+                  </tr>
+              </tbody>
+          </table>  
+          <ng-container *ngIf="checkEmpty()">
+            <div class="no-tasks">
+               There are no tasks yet!
+            </div>
+           </ng-container>        
+    </main>
+    <ng-container *ngIf="isEditingTask">
+        <div class="modal__wrapper">
+                <form [formGroup]="editTaskForm" (ngSubmit)="submitEdited()" class="modal-edit-task">
+                    <div class="modal-edit-task__header">
+                        <p class="modal-edit-task__title">Edit task</p>
+                        <div class="btn-close" (click)="closeModal()">
+                            <mat-icon>close</mat-icon>  
+                        </div>
+                    </div >
+                 <div class="modal-edit-task__body-inputs">
+                    <div class="input-box">
+                        <label class="label" for="name">Task name:</label>
+                        <input id="name" type="text" formControlName="name">
+                  </div >
+                  <div class="input-box">
+                    <label class="label" for="description">Task description:</label>
+                    <input id="name" type="text" formControlName="description">
+                  </div >
+                  <div class="input-box">
+                    <select name="status" formControlName="status">
+                        <option *ngFor="let status of allStatus" [ngValue]="status.title">{{status.title}}</option>
+                     </select>
+                  </div >
+                 </div>
+                 <div class="modal-edit-task__actions">
+                    <button class="btn btn-close-modal" 
+                    (click)="closeModal()">Close
+                    </button>
+                    <button type="submit"
+                     class="btn btn-submit-edit" 
+                    [disabled]="editTaskForm.invalid" >
+                    Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+     </ng-container>
+  </div>

@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <main class="container main__block">
+        <table class="table">
+            <thead class="table-head">
+                <th>№</th>
+                <th>Task name</th>
+                <th>Task description</th>
+                <th>Task status</th>
+                <th>Edit</th>
+
+            </thead>
+            <tbody class="table-body">
+                <tr [style.backgroundColor]="taskService.getStatusColor(item.status).backgroundColor"
+                    [style.color]="taskService.getStatusColor(item.status).color"
+                    *ngFor="let item of allTasks; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td class="descip-td">{{item.description}}</td>
+                    <td>{{item.status}}</td>
+                    <td><button class="btn btn-edit" (click)="deleteTask(item)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-container *ngIf="checkEmpty()">
+            <div class="no-tasks">
+                There are no tasks yet!
+            </div>
+        </ng-container>
+    </main>
+</div>

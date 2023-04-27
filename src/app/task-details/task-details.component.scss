@@ -1,0 +1,61 @@
+.modal__wrapper {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(40, 39, 39, 0.528);
+     z-index: 3;
+ }
+
+ .modal-edit-task {
+     position: absolute;
+     z-index: 20;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     border: 1px solid;
+     display: flex;
+     flex-direction: column;
+     padding: 15px;
+     border: none;
+     border-radius: 5px;
+     background-color: #fff;
+ }
+
+ .modal-edit-task__header {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 10px;
+ }
+
+ select {
+     width: 100%;
+     min-height: 20px;
+     border-radius: 5px;
+     margin-bottom: 10px;
+ }
+
+ .modal-edit-task__title {}
+
+ .btn {}
+
+ .btn-close {}
+
+ .modal-edit-task__body-inputs {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 10px;
+ }
+
+ .input-box {}
+
+ .label {}
+
+ .modal-edit-task__actions {
+     display: flex;
+     gap: 10px;
+     justify-content: flex-end;
+ }
+
+ .btn-submit-edit {}
